@@ -3,7 +3,7 @@ const app = express();
 var cors = require('cors');
 const PORT  = 10000;
 
-const allowedOrigins = ['https://mstfazmni.github.io/Final-Project/landlord.html?properties=Apartments&image=burnaby.jpg'];
+const allowedOrigins = ['https://mstfazmni.github.io'];
 
 // CORS options
 const corsOptions = {
