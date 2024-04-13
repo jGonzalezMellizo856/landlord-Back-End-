@@ -20,3 +20,19 @@ app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`);
     console.log(`ors-enabled web server listening on ${PORT}`);
 });
+
+fetch('your_api_endpoint', {
+  method: 'POST',
+  body: JSON.stringify(data), // Your request data
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Response data:', data);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
