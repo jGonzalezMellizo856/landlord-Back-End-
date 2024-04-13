@@ -1,22 +1,21 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-var cors = require('cors');
-const PORT  = 10000;
+const PORT = 3000;
 
+// Enable CORS middleware
 app.use(cors());
 app.use(express.json());
 
-app.get('/products/:id', function (req, res, next){
-    res.json({ msg: 'This is CORS-enabled for all origins!' })
-
+// Define a POST route to handle form submission
+app.post('/upload', (req, res) => {
+    // Process the form data here
+    console.log(req.body); // Log the received data to the console
+    res.json({ message: 'Data received on server' }); // Respond with a message
 });
 
-app.post('/', (req, res) => {
-    console.log(req.body);
-    res.json({message: 'data recieved on server'});
-});
-
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
-    console.log(`ors-enabled web server listening on ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
+    console.log('CORS-enabled web server listening on port ${PORT}');
 });
