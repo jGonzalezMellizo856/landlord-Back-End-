@@ -1,5 +1,5 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 import fetch from 'node-fetch'; // Import 'node-fetch' for making HTTP requests
 const app = express();
 const PORT = 3000;
