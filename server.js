@@ -3,6 +3,23 @@ const app = express();
 var cors = require('cors');
 const PORT  = 10000;
 
+const allowedOrigins = ['https://mstfazmni.github.io/Final-Project/landlord.html?properties=Apartments&image=burnaby.jpg'];
+
+// CORS options
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Check if the origin is allowed or if it's a browser preflight request
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+
+
+
 app.use(cors());
 app.use(express.json());
 
